@@ -17,6 +17,7 @@ footer {
 
 main {
   padding: 20px;
+  text-align: center;
 }
 
 h2 {
@@ -29,6 +30,7 @@ form {
   grid-gap: 10px;
   max-width: 500px;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 #title {
