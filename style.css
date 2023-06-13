@@ -8,6 +8,7 @@ header,
 footer {
   background-color: #d13c5c;
   padding: 20px;
+  color: #fff;
 }
 
 header h1,
@@ -16,36 +17,70 @@ footer {
 }
 
 main {
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: left;
 }
 
 h2 {
-  margin-top: 0;
+  margin-top: 80px;
+  color: #d13c5c;
+  font-size: 32px;
 }
 
 form {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 500px;
   grid-gap: 10px;
-  max-width: 500px;
+  max-width: 600px;
   margin-bottom: 20px;
-  justify-content: center;
 }
 
 #title {
-  height: 40px;
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
+
 label {
   font-weight: bold;
 }
 
 textarea {
   height: 100px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#image {
+  height: 30px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 button {
-  padding: 10px 20px;
+  margin-top: 50px;
+  padding: 15px 20px;
+  background: #d13c5c;
+  border: none;
+  color: white;
+  font-size: medium;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#recipes {
+  margin-top: 100px;
+}
+
+button:hover {
+  background-color: #c13150;
 }
 
 ul {
@@ -57,6 +92,7 @@ li {
   border: 1px solid #ccc;
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 li h3 {
