@@ -20,7 +20,7 @@ function addRecipe(event) {
     title: titleInput.value,
     ingredients: ingredientsInput.value,
     instructions: instructionsInput.value,
-    image: imageInput.value || "default.jpg", // Default image if no image is uploaded
+    image: imageInput.value || "default.jpg",
   };
 
   // Add the new recipe to the data structure
@@ -32,20 +32,24 @@ function addRecipe(event) {
   instructionsInput.value = "";
   imageInput.value = "";
 
-  // Display the new recipe in the recipe list
+  // Refresh the displayed recipes
   displayRecipes();
-
-  // Close the modal if it is open
-  closeModal();
 }
 
 // Function to display the list of recipes
-function displayRecipes() {
+function displayRecipes(searchQuery = "") {
   // Clear the existing list
   recipeList.innerHTML = "";
 
-  // Create HTML elements for each recipe
-  recipes.forEach((recipe, index) => {
+  // Filter recipes based on search query
+  const filteredRecipes = recipes.filter(
+    (recipe) =>
+      recipe.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      recipe.ingredients.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Create HTML elements for each filtered recipe
+  filteredRecipes.forEach((recipe, index) => {
     const li = document.createElement("li");
     li.innerHTML = `
       <h3>${recipe.title}</h3>
@@ -100,7 +104,7 @@ function editRecipe(index) {
   // Delete the existing recipe from the data structure
   recipes.splice(index, 1);
 
-  // Display the updated recipe list
+  // Refresh the displayed recipes
   displayRecipes();
 }
 
@@ -109,7 +113,7 @@ function deleteRecipe(index) {
   // Delete the recipe from the data structure
   recipes.splice(index, 1);
 
-  // Display the updated recipe list
+  // Refresh the displayed recipes
   displayRecipes();
 }
 
@@ -122,8 +126,18 @@ function closeModal() {
   }
 }
 
+// Function to handle the search button click event
+function searchRecipes() {
+  const searchInput = document.getElementById("search");
+  const searchQuery = searchInput.value;
+  displayRecipes(searchQuery);
+}
+
 // Add event listener to the form submission
-recipeForm.addEventListener("submit", addRecipe);
+recipeForm.addEventListener("submit", function (event) {
+  addRecipe(event);
+  displayRecipes();
+});
 
 // Initial display of recipes
 displayRecipes();

@@ -20,13 +20,20 @@
         <label for="instructions">Instructions:</label>
         <textarea id="instructions" required></textarea>
 
-        <label for="image">Image:</label>
+        <label for="image">Image of Recipe:</label>
         <input type="file" id="image" />
 
         <button type="submit">Add</button>
       </form>
 
       <h2 id="recipes">Recipes</h2>
+      <div class="search">
+        <label for="search">Search:</label>
+        <input type="text" id="search" />
+        <button id="search" type="button" onclick="searchRecipes()">
+          Search
+        </button>
+      </div>
       <ul id="recipeList"></ul>
     </main>
     <footer>Recipe Management System &copy; 2023</footer>

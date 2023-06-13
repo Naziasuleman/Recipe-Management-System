@@ -26,9 +26,9 @@ main {
 }
 
 h2 {
-  margin-top: 80px;
+  margin-top: 40px;
   color: #d13c5c;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 form {
@@ -65,7 +65,6 @@ textarea {
 }
 
 button {
-  margin-top: 50px;
   padding: 15px 20px;
   background: #d13c5c;
   border: none;
@@ -75,12 +74,43 @@ button {
   cursor: pointer;
 }
 
-#recipes {
-  margin-top: 100px;
+button:hover {
+  background-color: #857d7f;
 }
 
-button:hover {
-  background-color: #c13150;
+#recipes {
+  margin-top: 120px;
+}
+.search {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search label {
+  margin-right: 10px;
+}
+
+.search input[type="text"] {
+  height: 25px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.search button {
+  padding: 10px 15px;
+  background: #d13c5c;
+  border: none;
+  color: white;
+  font-size: medium;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #857d7f;
 }
 
 ul {
@@ -106,6 +136,7 @@ li p {
 .modal {
   display: none;
   position: fixed;
+  border-radius: 10px;
   z-index: 1;
   left: 0;
   top: 0;
